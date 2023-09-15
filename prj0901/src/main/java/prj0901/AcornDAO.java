@@ -32,7 +32,7 @@ public class AcornDAO {
 	}
 	
 	
-	public ArrayList<String> selectAll(){	
+	public ArrayList<String> selectAll0(){	
 		//연결
 		Connection con  =dbcon();
 		
@@ -60,6 +60,37 @@ public class AcornDAO {
 		return list;		
 	}
 	
+	public ArrayList<Customer> selectAll(){	
+		//연결
+		Connection con  =dbcon();
+		
+		//sql
+		String sql="select * from acorntbl";		
+		//sql실행
+		PreparedStatement pst=null;
+		ResultSet rs =null;
+		
+		ArrayList<Customer> list =new ArrayList<>();
+		try {
+			pst=con.prepareStatement(sql);
+			rs =pst.executeQuery();
+			
+			while( rs.next()) {
+				String  id= rs.getString(1);
+				String  pw= rs.getString(2);
+				String  name= rs.getString(3);
+				Customer c = new Customer( id, pw, name);
+				list.add(c);
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}		
+		//해제
+		close(rs,pst, con);
+		return list;		
+	}
 	
 	/*
 	public Customer selectOne() {

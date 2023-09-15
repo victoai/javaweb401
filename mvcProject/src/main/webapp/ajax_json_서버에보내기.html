@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+</head>
+<body>
+
+<script>
+	let id="hong";
+	let pw="1234";
+	$.ajax({
+    type: "POST", // HTTP 요청 방식 (POST)
+    dataType: "json", // 응답 데이터 형식 (JSON)
+    contentType: "application/json", // 요청 데이터 형식 (JSON)
+    data: JSON.stringify({ id: id, pw: pw }), // JSON 데이터를 문자열로 변환하여 전송
+    url: "/mvcProject/testjson", // 서버 엔드포인트 URL (실제 서버 URL로 변경해야 함)
+    success: function (data) {
+        alert(JSON.stringify(data));
+    },
+    error: function (err) {
+        alert("요청에 실패했습니다");
+    }
+}); 
+
+</script>
+
+</body>
+</html>

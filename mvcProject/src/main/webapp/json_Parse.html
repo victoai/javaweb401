@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<script>
+	const jsonString = '{"name": "hong", "age": 25, "city": "seoul"}';
+
+	// JSON 문자열을 파싱하여 JavaScript 객체로 변환
+	const person = JSON.parse(jsonString);
+	
+	console.log( person);
+	console.log(person.name); // "John"
+	console.log(person.age);  // 30
+	console.log(person.city); // "New York"
+
+</script>
+</body>
+</html>

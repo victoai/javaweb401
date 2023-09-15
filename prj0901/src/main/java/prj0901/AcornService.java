@@ -16,11 +16,17 @@ public class AcornService {
 		return list; 
 	}	
 	
-	public ArrayList<String> getMemberRealList(){	
-		 ArrayList<String> list  =dao.selectAll();
+	public ArrayList<String> getMemberRealList0(){	
+		 ArrayList<String> list  =dao.selectAll0();
 		 return list;
 		
 	}	
+	
+	public ArrayList<Customer> getMemberRealList (){	
+		 ArrayList<Customer> list  =dao.selectAll();
+		 return list;
+		
+	}
 	
 	public void  registerMember( Customer c ) {		
 		dao.insertMember3(c);

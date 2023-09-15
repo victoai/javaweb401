@@ -18,7 +18,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 	//
 	AcornService s = new AcornService();
 	//ArrayList<String> list  = s.getMemberList();
-	 ArrayList<String> list  = s.getMemberRealList();
+	 ArrayList<Customer> list  = s.getMemberRealList();
 	System.out.println( list );
 	
 	//model 심기
